@@ -29,9 +29,8 @@ async def bots(client, message):
         await asyncio.sleep(e.value)
 
 
-__MODULE__ = "Bᴏᴛs"
+__MODULE__ = "Bots"
 __HELP__ = """
-**ʙᴏᴛs**
 
-• /bots - ɢᴇᴛ ᴀ ʟɪsᴛ ᴏғ ʙᴏᴛs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
+/bots - Get list bot in group.
 """

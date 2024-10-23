@@ -134,7 +134,7 @@ Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorro
                     [
                         [
                             InlineKeyboardButton(
-                                text="Aᴅᴅ ᴍᴇ 🌋",
+                                text="Add me",
                                 url=f"https://t.me/{app.username}?startgroup=true",
                             )
                         ]

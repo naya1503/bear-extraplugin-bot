@@ -14,7 +14,7 @@ from main import app
 close_keyboard = InlineKeyboardMarkup(
     [
         [InlineKeyboardButton(text="Rᴇғʀᴇsʜ", callback_data="refresh_cat")],
-        [InlineKeyboardButton(text="〆 ᴄʟᴏsᴇ 〆", callback_data="close")],
+        [InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="close")],
     ]
 )
 

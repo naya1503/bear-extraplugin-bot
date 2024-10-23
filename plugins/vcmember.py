@@ -1,5 +1,6 @@
 from pyrogram import filters
 from pyrogram.enums import ChatType
+from pyrogram.enums import ChatMemberStatus as CMS
 
 from strings import get_string
 from main import app
@@ -8,9 +9,12 @@ from main.utils.database import get_assistant, get_lang
 
 
 @app.on_message(
-    filters.command(["vcuser", "vcusers", "vcmember", "vcmembers"]) & filters.admin
+    filters.command(["vcuser", "vcusers", "vcmember", "vcmembers"])
 )
 async def vc_members(client, message):
+    admin = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if admin.status not in [CMS.OWNER, CMS.ADMINISTRATOR]:
+        return
     try:
         language = await get_lang(message.chat.id)
         _ = get_string(language)

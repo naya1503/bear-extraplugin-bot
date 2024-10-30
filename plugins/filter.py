@@ -6,17 +6,17 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
 )
 
-from main import app
+from KNMusic import app
 from utils.error import capture_err
 from utils.permissions import adminsOnly, member_permissions
-from main.utils.keyboard import ikb
+from KNMusic.utils.keyboard import ikb
 from .notes import extract_urls
-from main.utils.functions import (
+from KNMusic.utils.functions import (
     check_format,
     extract_text_and_keyb,
     get_data_and_name,
 )
-from main.utils.database import (
+from KNMusic.utils.database import (
     deleteall_filters,
     get_filter,
     get_filters_names,

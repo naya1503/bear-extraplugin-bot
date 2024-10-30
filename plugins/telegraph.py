@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from main import app
+from KNMusic import app
 from TheApi import api
 
 

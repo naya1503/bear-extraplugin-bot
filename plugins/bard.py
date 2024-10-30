@@ -1,7 +1,7 @@
 import requests
 from pyrogram import filters
 
-from main import app
+from KNMusic import app
 from SafoneAPI import SafoneAPI
 
 

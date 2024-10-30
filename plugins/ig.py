@@ -2,7 +2,7 @@ import re
 import requests
 from pyrogram import filters
 
-from main import app
+from KNMusic import app
 from config import LOG_GROUP_ID
 
 

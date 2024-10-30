@@ -22,17 +22,17 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
 from strings import get_string
-from main import app
-from main.misc import SUDOERS
-from main.utils.database import (
+from KNMusic import app
+from KNMusic.misc import SUDOERS
+from KNMusic.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
     get_playmode,
     get_playtype,
 )
-from main.utils.logger import play_logs
-from main.utils.stream.stream import stream
+from KNMusic.utils.logger import play_logs
+from KNMusic.utils.stream.stream import stream
 
 RADIO_STATION = {
     "Air Bilaspur": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio110/playlist.m3u8",

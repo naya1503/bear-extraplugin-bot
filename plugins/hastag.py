@@ -1,5 +1,5 @@
 from pyrogram import filters
-from main import app
+from KNMusic import app
 from TheApi import api
 
 

@@ -2,7 +2,7 @@ from pyrogram import filters
 from TheApi import api
 
 from config import LOG_GROUP_ID
-from main import app
+from KNMusic import app
 from SafoneAPI import SafoneAPI
 
 

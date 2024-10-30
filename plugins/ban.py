@@ -14,13 +14,13 @@ from pyrogram.types import (
 from string import ascii_lowercase
 from typing import Dict, Union
 
-from main import app
-from main.misc import SUDOERS
-from main.core.mongo import mongodb
+from KNMusic import app
+from KNMusic.misc import SUDOERS
+from KNMusic.core.mongo import mongodb
 from utils.error import capture_err
-from main.utils.keyboard import ikb
-from main.utils.database import save_filter
-from main.utils.functions import (
+from KNMusic.utils.keyboard import ikb
+from KNMusic.utils.database import save_filter
+from KNMusic.utils.functions import (
     extract_user,
     extract_user_and_reason,
     time_converter,

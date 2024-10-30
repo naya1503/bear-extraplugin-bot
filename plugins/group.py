@@ -1,6 +1,6 @@
 from pyrogram import enums, filters
 
-from main import app
+from KNMusic import app
 from utils.permissions import adminsOnly
 
 

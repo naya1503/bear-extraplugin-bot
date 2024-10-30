@@ -3,9 +3,9 @@ import os
 from pyrogram import enums, filters
 from pyrogram.types import Message
 
-from main import app
-from main.misc import SUDOERS
-from main.utils.database import is_gbanned_user
+from KNMusic import app
+from KNMusic.misc import SUDOERS
+from KNMusic.utils.database import is_gbanned_user
 
 n = "\n"
 w = " "

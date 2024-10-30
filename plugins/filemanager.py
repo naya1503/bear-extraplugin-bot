@@ -8,8 +8,8 @@ from os.path import exists, isdir
 from pyrogram import filters
 from pyrogram.types import Message
 
-from main import app
-from main.misc import SUDOERS
+from KNMusic import app
+from KNMusic.misc import SUDOERS
 from utils.error import capture_err
 
 MAX_MESSAGE_SIZE_LIMIT = 4095

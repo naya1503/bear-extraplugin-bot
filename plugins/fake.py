@@ -1,7 +1,7 @@
 import requests
 from pyrogram import filters
 
-from main import app
+from KNMusic import app
 
 
 @app.on_message(filters.command(["FAKE", "fake"]))

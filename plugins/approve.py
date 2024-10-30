@@ -12,10 +12,10 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import ChatJoinRequest
 from pyrogram.errors.exceptions.bad_request_400 import UserAlreadyParticipant
-from main import app
-from main.core.mongo import mongodb
-from main.misc import SUDOERS
-from main.utils.keyboard import ikb
+from KNMusic import app
+from KNMusic.core.mongo import mongodb
+from KNMusic.misc import SUDOERS
+from KNMusic.utils.keyboard import ikb
 from utils.permissions import adminsOnly, member_permissions
 
 approvaldb = mongodb.autoapprove

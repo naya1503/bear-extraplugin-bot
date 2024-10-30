@@ -4,7 +4,7 @@ import requests
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from main import app
+from KNMusic import app
 
 
 @app.on_message(filters.command(["wall", "wallpaper"]))

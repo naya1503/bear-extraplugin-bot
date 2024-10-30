@@ -3,9 +3,9 @@ from pyrogram.enums import ChatType
 from pyrogram.enums import ChatMemberStatus as CMS
 
 from strings import get_string
-from main import app
-from main.utils import Yukkibin
-from main.utils.database import get_assistant, get_lang
+from KNMusic import app
+from KNMusic.utils import Yukkibin
+from KNMusic.utils.database import get_assistant, get_lang
 
 
 @app.on_message(

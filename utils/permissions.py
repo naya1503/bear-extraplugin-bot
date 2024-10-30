@@ -5,8 +5,8 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from main import app
-from main.misc import SUDOERS
+from KNMusic import app
+from KNMusic.misc import SUDOERS
 
 
 async def member_permissions(chat_id: int, user_id: int):

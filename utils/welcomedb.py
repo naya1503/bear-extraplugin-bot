@@ -1,4 +1,4 @@
-from main.core.mongo import mongodb
+from KNMusic.core.mongo import mongodb
 
 greetingsdb = mongodb.greetings
 

@@ -4,7 +4,7 @@ from pyrogram.enums import ChatMemberStatus as CMS
 
 from strings import get_string
 from KNMusic import app
-from KNMusic.utils import Yukkibin
+from KNMusic.utils import KNbin
 from KNMusic.utils.database import get_assistant, get_lang
 
 

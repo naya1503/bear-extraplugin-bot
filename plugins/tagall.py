@@ -21,11 +21,99 @@ async def is_admin(chat_id, user_id):
         return True
     return False
 
+gc_ray = [-1001871325231, -1002114699601 , -1001814934188, -1001827152556]
 
 @app.on_message(
     filters.command(["all", "allmention", "mentionall", "tagall"], prefixes=["/", "@"])
 )
-async def tag_all_users(_, message):
+async def tag_all_users(client, message):
+    if app.me.id == 7933705241:
+        return await tag_all_ray(client, message)
+    admin = await is_admin(message.chat.id, message.from_user.id)
+    if not admin:
+        return
+
+    if message.chat.id in SPAM_CHATS:
+        return await message.reply_text(
+            "ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss ɪs ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴛᴏᴘ sᴏ ᴜsᴇ /cancel"
+        )
+    replied = message.reply_to_message
+    if len(message.command) < 2 and not replied:
+        await message.reply_text(
+            "** ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ, ʟɪᴋᴇ »** `@all Hi Friends`"
+        )
+        return
+    if replied:
+        usernum = 0
+        usertxt = ""
+        try:
+            SPAM_CHATS.append(message.chat.id)
+            async for m in app.get_chat_members(message.chat.id):
+                if message.chat.id not in SPAM_CHATS:
+                    break
+                if m.user.is_deleted or m.user.is_bot:
+                    continue
+                usernum += 1
+                usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})  "
+                if usernum == 7:
+                    await replied.reply_text(
+                        usertxt,
+                        disable_web_page_preview=True,
+                    )
+                    await asyncio.sleep(1)
+                    usernum = 0
+                    usertxt = ""
+
+            if usernum != 0:
+                await replied.reply_text(
+                    usertxt,
+                    disable_web_page_preview=True,
+                )
+        except FloodWait as e:
+            await asyncio.sleep(e.value)
+        try:
+            SPAM_CHATS.remove(message.chat.id)
+        except Exception:
+            pass
+    else:
+        try:
+            usernum = 0
+            usertxt = ""
+            text = message.text.split(None, 1)[1]
+            SPAM_CHATS.append(message.chat.id)
+            async for m in app.get_chat_members(message.chat.id):
+                if message.chat.id not in SPAM_CHATS:
+                    break
+                if m.user.is_deleted or m.user.is_bot:
+                    continue
+                usernum += 1
+                usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})  "
+                if usernum == 7:
+                    await app.send_message(
+                        message.chat.id,
+                        f"{text}\n{usertxt}",
+                        disable_web_page_preview=True,
+                    )
+                    await asyncio.sleep(2)
+                    usernum = 0
+                    usertxt = ""
+            if usernum != 0:
+                await app.send_message(
+                    message.chat.id,
+                    f"{text}\n\n{usertxt}",
+                    disable_web_page_preview=True,
+                )
+        except FloodWait as e:
+            await asyncio.sleep(e.value)
+        try:
+            SPAM_CHATS.remove(message.chat.id)
+        except Exception:
+            pass
+          
+          
+async def tag_all_ray(client, message):
+    if message.chat.id not in gc_ray:
+        return
     admin = await is_admin(message.chat.id, message.from_user.id)
     if not admin:
         return
